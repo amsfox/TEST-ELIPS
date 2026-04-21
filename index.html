@@ -3,15 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ELIPS, démo site vitrine</title>
-    <meta name="description" content="Démo statique du site vitrine ELIPS, version HTML CSS JS prête à partager." />
+    <title>ELIPS, accueil</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <div class="page">
+      <header class="siteHeader">
+        <div class="container nav navMobileAware">
+          <div class="navTopRow">
+            <a href="index.html" class="brandLogoLink">
+              <svg class="logoSvg logoHeader" viewBox="0 0 420 120" role="img" aria-label="Logo ELIPS" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="elipsBlueHome" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#45c2ff"></stop><stop offset="100%" stop-color="#0d8fe6"></stop></linearGradient></defs>
+                <path d="M28 84 C52 28, 122 18, 214 34 C284 46, 337 34, 391 10 C341 46, 278 78, 202 97 C126 116, 60 112, 28 84 Z" fill="url(#elipsBlueHome)" opacity="0.96"></path>
+                <path d="M349 22 L392 10 L365 41 L370 27 L349 22 Z" fill="url(#elipsBlueHome)"></path>
+                <text x="88" y="64" fill="#0a0a0a" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" letter-spacing="1.5">ELIP’S</text>
+              </svg>
+            </a>
+            <button type="button" class="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+          </div>
+          <nav class="navLinks">
+            <a href="index.html" class="navLink active">Accueil</a>
+            <a href="a-propos.html" class="navLink">À propos</a>
+            <a href="services.html" class="navLink">Services</a>
+            <a href="realisations.html" class="navLink">Réalisations</a>
+            <a href="contact.html" class="navLink">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="heroSection">
+          <div class="heroGlow heroGlowOne"></div>
+          <div class="heroGlow heroGlowTwo"></div>
+          <div class="container heroGrid">
+            <div class="heroContent panel">
+              <div class="eyebrow">Énergie, sécurité et infrastructures techniques</div>
+              <h1>Des solutions techniques fiables pour sécuriser, équiper et faire évoluer vos installations.</h1>
+              <p class="lead">ELIPS accompagne les particuliers, professionnels et syndics avec une approche claire, rigoureuse et polyvalente autour de six domaines d’intervention complémentaires.</p>
+              <div class="heroActions">
+                <a class="btn btnPrimary" href="contact.html">Nous contacter</a>
+                <a class="btn btnGhost" href="services.html">Découvrir nos services</a>
+              </div>
+              <div class="heroMeta">
+                <span>Rigueur</span>
+                <span>Fiabilité</span>
+                <span>Professionnalisme</span>
+              </div>
+            </div>
+            <aside class="heroPanel panel">
+              <div class="panelTop"><span class="panelTag">Présentation ELIPS</span><span class="panelDot"></span></div>
+              <h3>Une expertise multi-domaines au service de vos installations et de votre sécurité.</h3>
+              <p>ELIPS intervient sur des besoins techniques essentiels avec un objectif simple, proposer des solutions fiables, adaptées et efficaces sur le terrain.</p>
+              <div class="panelList">
+                <div><strong>6 catégories</strong><span>pour couvrir des besoins techniques complémentaires</span></div>
+                <div><strong>Nos engagements</strong><span>Délais de rendez-vous réduits · Efficacité d’intervention · Solutions adaptées à chaque besoin</span></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="sectionIntro narrow">
+              <span class="kicker">Notre approche</span>
+              <h2>Une présence technique structurée, pensée pour répondre à des besoins réels sur le terrain.</h2>
+              <p>ELIPS intervient en maintenance, dépannage, rénovation et installation neuve, en courant fort comme en courant faible, avec une logique de proximité, de lisibilité et d’efficacité.</p>
+            </div>
+            <div class="cards threeCols">
+              <article class="card panel"><h3>Électricité générale</h3><p>Installation, maintenance, rénovation et mise en conformité de vos équipements électriques pour les environnements résidentiels, tertiaires et professionnels.</p></article>
+              <article class="card panel"><h3>Contrôle et gestion d’accès</h3><p>Solutions de contrôle d’accès adaptées à vos besoins de sécurisation, de traçabilité et de gestion des flux.</p></article>
+              <article class="card panel"><h3>Réseaux</h3><p>Déploiement d’infrastructures réseau fiables pour garantir connectivité, performance et continuité de service.</p></article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="siteFooter">
+        <div class="container footerContent">
+          <div class="footerBrandBlock">
+            <svg class="logoSvg logoFooter" viewBox="0 0 420 120" role="img" aria-label="Logo ELIPS" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="elipsBlueFooterHome" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#45c2ff"></stop><stop offset="100%" stop-color="#0d8fe6"></stop></linearGradient></defs>
+              <path d="M28 84 C52 28, 122 18, 214 34 C284 46, 337 34, 391 10 C341 46, 278 78, 202 97 C126 116, 60 112, 28 84 Z" fill="url(#elipsBlueFooterHome)" opacity="0.96"></path>
+              <path d="M349 22 L392 10 L365 41 L370 27 L349 22 Z" fill="url(#elipsBlueFooterHome)"></path>
+              <text x="88" y="64" fill="#0a0a0a" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" letter-spacing="1.5">ELIP’S</text>
+            </svg>
+            <p class="muted">Solutions techniques, sécurité, réseaux et énergie.</p>
+          </div>
+          <a class="btn btnGhost" href="contact.html">Contact</a>
+        </div>
+      </footer>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
