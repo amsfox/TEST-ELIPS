@@ -1,0 +1,302 @@
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #153b5a;
+  background: #f4f9fd;
+  line-height: 1.5;
+  font-weight: 400;
+  --bg: #f4f9fd;
+  --text: #153b5a;
+  --muted: #5d7890;
+  --accent: #2da2d8;
+  --accent-dark: #1778af;
+  --accent-soft: #dff1fb;
+  --border: rgba(42, 122, 168, 0.14);
+  --max: 1180px;
+  --shadow: 0 22px 50px rgba(20, 72, 109, 0.10);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(45, 162, 216, 0.16), transparent 26%),
+    radial-gradient(circle at top right, rgba(182, 220, 241, 0.34), transparent 28%),
+    linear-gradient(180deg, #f9fcff 0%, #eef6fb 100%);
+  color: var(--text);
+}
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+.page { min-height: 100vh; }
+.container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+.panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 250, 254, 0.96));
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(42, 122, 168, 0.10);
+}
+.nav {
+  display: flex;
+  gap: 24px;
+  padding: 16px 0;
+}
+.navMobileAware {
+  flex-direction: column;
+  align-items: stretch;
+}
+.navTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.brandLogoLink { min-width: 180px; display: inline-flex; }
+.logoSvg { display: block; height: auto; }
+.logoHeader { width: 190px; }
+.logoFooter { width: 160px; margin-bottom: 12px; }
+.navLinks { display: flex; flex-wrap: wrap; gap: 12px; }
+.menuToggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid rgba(45, 162, 216, 0.16);
+  background: rgba(255,255,255,0.92);
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.menuToggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent-dark);
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+.menuToggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menuToggle.open span:nth-child(2) { opacity: 0; }
+.menuToggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.navLink {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--muted);
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+.navLink.active {
+  color: var(--accent-dark);
+  border-color: rgba(45, 162, 216, 0.18);
+  background: rgba(45, 162, 216, 0.10);
+}
+.section { padding: 24px 0 82px; }
+.heroSection { position: relative; padding: 42px 0 30px; }
+.heroGlow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.65;
+  pointer-events: none;
+}
+.heroGlowOne {
+  top: 70px;
+  left: -60px;
+  width: 240px;
+  height: 240px;
+  background: rgba(45, 162, 216, 0.18);
+}
+.heroGlowTwo {
+  top: 20px;
+  right: -80px;
+  width: 280px;
+  height: 280px;
+  background: rgba(148, 204, 235, 0.24);
+}
+.heroGrid, .contactGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+  gap: 22px;
+}
+.heroContent, .heroPanel, .card, .contactForm, .mapCard, .faqCompact, .contactInfo, .infoBlock { padding: 24px; }
+.eyebrow, .kicker, .panelTag, .caseBadge, .caseRef {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+.pageTitle, .section h2, .heroSection h1 {
+  margin: 0;
+  letter-spacing: -0.04em;
+  color: #103553;
+}
+.heroSection h1 {
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  line-height: 0.96;
+  margin-top: 14px;
+}
+.lead, .muted, .sectionIntro p, .card p, .panelList span, .heroPanel p, .caseLead, .caseStudyBody p, .contactForm span { color: var(--muted); }
+.heroActions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  background: rgba(255,255,255,0.85);
+  color: var(--text);
+}
+.btnPrimary { background: linear-gradient(180deg, #36ace0, #1e90ca); color: #fff; border-color: transparent; }
+.heroMeta, .panelList, .contactAside, .faqList.compact { display: grid; gap: 12px; }
+.heroMeta { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 24px; }
+.heroMeta span, .panelList div, .caseBlock, .infoBlock {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(45, 162, 216, 0.05);
+  border: 1px solid rgba(45, 162, 216, 0.10);
+}
+.sectionIntro { max-width: 860px; margin-bottom: 28px; }
+.narrow { max-width: 760px; }
+.cards, .threeCols, .serviceGrid, .caseStudyGrid, .infoBlocks, .premiumCaseStudyBody {
+  display: grid;
+  gap: 18px;
+}
+.threeCols, .serviceGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.infoBlocks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.caseStudyGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.caseStudyCardWide { grid-column: span 2; }
+.caseStudyCard { padding: 0; overflow: hidden; }
+.caseStudyVisual {
+  position: relative;
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+}
+.caseStudyTexture, .caseStudyOverlay { position: absolute; inset: 0; }
+.caseStudyTexture { opacity: 0.55; }
+.caseStudyOverlay { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(13,79,124,0.16)); }
+.caseStudyIcon {
+  position: relative;
+  z-index: 1;
+  width: 96px;
+  height: 96px;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  font-size: 2.4rem;
+  background: rgba(255,255,255,0.38);
+  border: 1px solid rgba(255,255,255,0.72);
+  box-shadow: 0 16px 34px rgba(25, 92, 136, 0.16);
+  backdrop-filter: blur(8px);
+}
+.caseStudyMetaBar {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.caseStudyContent { padding: 28px; }
+.caseLead { margin: 12px 0 0; }
+.premiumCaseStudyBody { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; }
+.caseBlockResult { background: linear-gradient(180deg, rgba(45,162,216,0.10), rgba(255,255,255,0.85)); }
+.caseBlockLabel {
+  display: inline-flex;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-dark);
+}
+.contactGrid { grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr); }
+.contactForm { display: grid; gap: 16px; }
+.contactForm label { display: grid; gap: 8px; }
+.contactForm input, .contactForm textarea {
+  width: 100%;
+  border: 1px solid rgba(45, 162, 216, 0.14);
+  background: rgba(255,255,255,0.92);
+  border-radius: 14px;
+  padding: 14px 16px;
+  color: var(--text);
+}
+.mapEmbed { margin-top: 16px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(45, 162, 216, 0.12); }
+.mapEmbed iframe { width: 100%; height: 320px; border: 0; display: block; }
+.siteFooter {
+  border-top: 1px solid rgba(42, 122, 168, 0.10);
+  padding: 24px 0 36px;
+  background: rgba(255,255,255,0.56);
+}
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.footerBrandBlock { display: flex; flex-direction: column; align-items: flex-start; }
+.caseStudyPhoto-industrial-light .caseStudyVisual, .caseStudyCard-electricity .caseStudyVisual { background: linear-gradient(135deg, rgba(200, 233, 247, 0.95), rgba(107, 183, 224, 0.55)); }
+.caseStudyPhoto-access-entry .caseStudyVisual, .caseStudyCard-access .caseStudyVisual { background: linear-gradient(135deg, rgba(214, 237, 248, 0.95), rgba(91, 177, 221, 0.55)); }
+.caseStudyPhoto-network-cabling .caseStudyVisual, .caseStudyCard-network .caseStudyVisual { background: linear-gradient(135deg, rgba(214, 240, 252, 0.95), rgba(69, 174, 225, 0.55)); }
+.caseStudyPhoto-security-night .caseStudyVisual, .caseStudyCard-intrusion .caseStudyVisual { background: linear-gradient(135deg, rgba(223, 240, 249, 0.95), rgba(63, 150, 207, 0.55)); }
+.caseStudyPhoto-safety-red .caseStudyVisual, .caseStudyCard-fire .caseStudyVisual { background: linear-gradient(135deg, rgba(226, 241, 248, 0.95), rgba(53, 160, 211, 0.55)); }
+.caseStudyPhoto-solar-roof .caseStudyVisual, .caseStudyCard-solar .caseStudyVisual { background: linear-gradient(135deg, rgba(229, 244, 251, 0.95), rgba(103, 188, 228, 0.55)); }
+.caseStudyPhoto-industrial-light .caseStudyTexture {
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(18,72,110,0.08)), linear-gradient(120deg, rgba(255,255,255,0.18) 0 18%, transparent 18% 100%), repeating-linear-gradient(90deg, rgba(255,255,255,0.14) 0 6px, transparent 6px 38px), repeating-linear-gradient(180deg, rgba(20,80,120,0.06) 0 18px, transparent 18px 44px);
+}
+.caseStudyPhoto-access-entry .caseStudyTexture {
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(12,84,128,0.08)), radial-gradient(circle at 72% 35%, rgba(255,255,255,0.28), transparent 14%), linear-gradient(90deg, rgba(255,255,255,0.18) 0 14%, transparent 14% 100%), repeating-linear-gradient(90deg, rgba(17,120,175,0.06) 0 10px, transparent 10px 46px);
+}
+.caseStudyPhoto-network-cabling .caseStudyTexture {
+  background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(0,82,130,0.08)), repeating-linear-gradient(135deg, rgba(255,255,255,0.16) 0 3px, transparent 3px 18px), repeating-linear-gradient(45deg, rgba(41,149,204,0.10) 0 4px, transparent 4px 22px);
+}
+.caseStudyPhoto-security-night .caseStudyTexture {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(8,44,82,0.22)), radial-gradient(circle at 50% 28%, rgba(255,255,255,0.22), transparent 14%), repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 2px, transparent 2px 24px);
+}
+.caseStudyPhoto-safety-red .caseStudyTexture {
+  background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(104,20,20,0.08)), repeating-linear-gradient(45deg, rgba(255,255,255,0.12) 0 6px, transparent 6px 18px), linear-gradient(90deg, rgba(255,255,255,0.12) 0 100%);
+}
+.caseStudyPhoto-solar-roof .caseStudyTexture {
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(13,92,132,0.06)), linear-gradient(135deg, rgba(255,255,255,0.16) 0 20%, transparent 20% 100%), repeating-linear-gradient(90deg, rgba(255,255,255,0.16) 0 2px, transparent 2px 24px), repeating-linear-gradient(180deg, rgba(255,255,255,0.14) 0 2px, transparent 2px 18px);
+}
+@media (max-width: 1024px) {
+  .heroGrid, .threeCols, .serviceGrid, .contactGrid, .infoBlocks, .caseStudyGrid, .premiumCaseStudyBody, .heroMeta {
+    grid-template-columns: 1fr;
+  }
+  .caseStudyCardWide { grid-column: span 1; }
+}
+@media (max-width: 900px) {
+  .menuToggle { display: inline-flex; }
+  .navLinks { display: none; flex-direction: column; gap: 10px; width: 100%; padding-top: 12px; }
+  .navLinks.open { display: flex; }
+  .navLink { width: 100%; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.82); border: 1px solid rgba(45, 162, 216, 0.10); }
+}
+@media (min-width: 901px) {
+  .navMobileAware { flex-direction: row; align-items: center; }
+}
+@media (max-width: 640px) {
+  .container { width: min(calc(100% - 20px), var(--max)); }
+  .heroContent, .heroPanel, .card, .contactForm, .mapCard, .faqCompact, .contactInfo { padding: 20px; }
+  .heroSection h1, .pageTitle { font-size: 2.2rem; }
+  .logoHeader { width: 150px; }
+  .logoFooter { width: 140px; }
+  .footerContent { flex-direction: column; align-items: flex-start; }
+}
